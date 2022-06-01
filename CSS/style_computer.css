@@ -8,7 +8,7 @@
 .main_container {
   display: grid;
   grid-template-columns: 30% 40% 30%;
-  grid-template-rows:100px 860px 400px 200px 480px 200px 400px 200px 250px;
+  grid-template-rows:100px 200px 400px 200px 480px 200px 400px 200px 250px;
   background-image: url(../IMG/79ed5fd7a84cbeba81375f57c5482b66.gif);
   background-repeat: no-repeat;
   background-attachment: fixed;
