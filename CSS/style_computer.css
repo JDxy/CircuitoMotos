@@ -8,7 +8,7 @@
 .main_container {
   display: grid;
   grid-template-columns: 30% 40% 30%;
-  grid-template-rows:100px 200px 400px 200px 480px 200px 400px 200px 250px;
+  grid-template-rows:100px 800px 400px 200px 480px 200px 400px 200px 250px;
   background-image: url(../IMG/79ed5fd7a84cbeba81375f57c5482b66.gif);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -16,7 +16,6 @@
   overflow: hidden;
   justify-content: center;
 }
-
 
 
 body {
@@ -186,12 +185,22 @@ li:hover {
 }
 
 .section_2 .section_img1 {
-  min-width: 100%;
+  min-width: 37%;
   border-radius: 10px;
-  max-height: 443px;
+  max-height: 330px;
   grid-column: 2;
   grid-row: 2;
 }
+
+.section_2 .section_img2 {
+  min-width: 37%;
+  border-radius: 10px;
+  max-height: 330px;
+  grid-column: 2;
+  grid-row: 2;
+  MARGIN-LEFT: 1000PX;
+}
+
 /* END Section2 zone */
     /* START SECTION3 ZONE */
     .section_3{
