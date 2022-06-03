@@ -172,6 +172,11 @@
         grid-column: 1/4;
         grid-row: 2;
     }
+
+    .section_2 .section_img2 {
+        overflow: hidden;
+      }
+      
     /* END Section2 zone */
     /* START SECTION3 ZONE */
     .section_3{
