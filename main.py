@@ -1,42 +1,60 @@
-import sqlite3
 from bottle import route, run, template, request, get, post, redirect
 from config.config import DATABASE
+from models.events import Event
 
-@route('/todo')
-def todo_list():
-    conn = sqlite3.connect(DATABASE)
-    c = conn.cursor()
-    c.execute("select * from eventos")
-    result = c.fetchall()
-    c.close()
-    output = template('make_table', rows=result)
-    return output
+event = Event(DATABASE)
 
 
-@route('/new')
-def new_item_form():
-    return template('new_task')
+@route('/events')
+def event_list():
+    return template('make_table', rows=event.select())
+
+@get('/new')
+def new_task_form():
+    return template('new_event')
 
 @post('/new')
-def new_item_save():
+def new_task_save():
     if request.POST.save:  # the user clicked the `save` button
-        new1 = request.POST.Fecha_inicio.strip()    # get the task from the form
-        new2 = request.POST.Fecha_fin.strip() 
-        new3 = request.POST.Categoria.strip()
-        new4 = request.POST.Coste_participantes.strip()
-        new5 = request.POST.Coste_espectadores.strip()
+        new = request.POST.task.strip()    # get the task from the form
+        
+        event.insert_task(new)
 
-        conn = sqlite3.connect('data.sqlite')
-        c = conn.cursor()
+        return redirect('/events')
 
-        c.execute("INSERT INTO eventos(fecha_inicio,fecha_fin,categoria,coste_participante,coste_espectadores) VALUES (?,?,?,?,?)", ((new1,new2,new3,new4,new5)))
-        new_id = c.lastrowid
+@get('/edit/<no:int>')
+def edit_item_form(no):
+    cur_data = event.get_task(no)  # get the current data for the item we are editing
+    return template('edit_event', old=cur_data, no=no)
 
-        conn.commit()
-        c.close()
-        # se muestra el resultado de la operación
-        return redirect('/todo')
+
+@post('/edit/<no:int>')
+def edit_item(no):
+
+    if request.POST.save:
+        # get the values of the form
+        fecha_inicio = request.POST.Fecha_inicio.strip()
+        fecha_fin = request.POST.Fecha_fin.strip()
+        categoria = request.POST.categoria.strip()
+        coste_participantes = request.POST.Coste_participantes.strip()
+        coste_espectadores = request.POST.Coste_espectadores.strip()
+
+        event.update(no, fecha_inicio, fecha_fin, categoria, coste_participantes, coste_espectadores)
+        
+        return redirect('/events')
+
+@get('/delete/<no:int>')
+def delete_item_form(no):
+    cur_data = event.get_task(no)  # get the current data for the item we are editing
+    return template('delete_event', old=cur_data, no=no)
+
+@post('/delete/<no:int>')
+def delete_item(no):
+    if request.POST.delete:
+        event.delete(no)
+
+    return redirect('/events')
 
 if __name__ == '__main__':
-    run(host='localhost', port=8080, debug=True, reloader=True)
+   run(host='localhost', port=8080, debug=True, reloader=True)
 
