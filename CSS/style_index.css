@@ -7,7 +7,6 @@
 
 .main_container {
     display: grid;
-
     grid-template-rows:74px 800px 300px 200px 300px 200px 400px 200px 400px 200px 1000px;
     background-image: url(../IMG/79ed5fd7a84cbeba81375f57c5482b66.gif);
     background-repeat: no-repeat;
@@ -100,6 +99,7 @@ li {
     border-bottom: 1px solid grey;
     z-index: 4;
     text-align: center;
+    cursor: pointer;
 }
 
 /*Estilo cuando el mouse pasa encima de cada link del menu*/
