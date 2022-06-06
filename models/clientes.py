@@ -28,7 +28,7 @@ class Clientes:
         conn = self.__connect()
         c = conn.cursor()
         codigo = self.get_cod_cliente(email)
-        c.execute("INSERT INTO espectadores(cod_cliente,miembro) VALUES (?,?)", ((email,miembro)))
+        c.execute("INSERT INTO espectador(cod_cliente,miembro) VALUES (?,?)", ((email,miembro)))
         conn.commit()
         c.close()
         return True

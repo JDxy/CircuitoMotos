@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Formulario</title>
-  <link rel="stylesheet" media="only screen and (max-width: 450px)" href="statics/CSS/style_mobile_formulario.css" />
-  <script type="text/javascript" rel="stylesheet" src="../Moto circuit/espectador-piloto.js"></script>
+  <link rel="stylesheet" media="only screen" href="/static/CSS/style_formulario.css" />
+  <script type="text/javascript" rel="stylesheet" src="/static/espectador-piloto.js"></script>
 </head>
 <body>
 <div class="main_container">
