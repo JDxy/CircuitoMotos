@@ -1,9 +1,9 @@
 function mostrar(dato){
-    if (dato == "e") {
+    if (dato == "espectador") {
         document.getElementById("espectadores").style.display = "block";
         document.getElementById("pilotos").style.display = "none";
     }
-    if (dato == "p") {
+    if (dato == "piloto") {
         document.getElementById("espectadores").style.display = "none";
         document.getElementById("pilotos").style.display = "block";
     }
