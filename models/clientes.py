@@ -1,3 +1,5 @@
+from contextlib import redirect_stderr
+from re import X
 import sqlite3
 class Clientes:
     def __init__(self, database):
@@ -32,3 +34,23 @@ class Clientes:
         conn.commit()
         c.close()
         return True
+
+    def espectador_o_piloto(self,email):
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("select tipo_piloto from clientes where email = ?"), ((email))
+        data = c.fetchone()
+        conn.commit()
+        c.close()
+        return data
+
+    def validar_email(self,email):
+        data = 0
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("select cod_cliente from clientes where email = ?"), ((email))
+        data = c.fetchone()
+        conn.commit()
+        c.close()
+        if data == 0:
+            return "error"
