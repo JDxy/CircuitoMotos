@@ -49,10 +49,11 @@ class Clientes:
         conn = self.__connect()
         c = conn.cursor()
         c.execute(sd, (email_,))
-        data = c.fetchall()
+        data = c.fetchone()
         conn.commit()
         c.close()
-        if data == 0:
+        print(data)
+        if data == None:
             return "error"
         return "true"
 
@@ -62,10 +63,10 @@ class Clientes:
         conn = self.__connect()
         c = conn.cursor()
         c.execute(sd, (email, contrasena))
-        data = c.fetchall()
+        data = c.fetchone()
         conn.commit()
         c.close()
-        if data == 0:
+        if data == None:
             return "false"
         else:
             return "true"

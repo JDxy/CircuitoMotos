@@ -20,6 +20,7 @@ def register():
     return template('inicio', form=form)
 
 
+
 @post('/new')
 def inicio():
     if request.POST.Iniciar_sesion:
