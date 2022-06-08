@@ -44,23 +44,18 @@
   %for col in row:
     <td>{{col}}</td>
   %end
-
-
   <td>
     <form action="/edit/{{row[0]}}" method="GET">
-        <input type="submit" name="save" value="Editar">
+        <input type="submit" name="save" value="Espectar">
     </form>
   </td>
   <td>
     <form action="/delete/{{row[0]}}" method="GET">
-        <input class="botones_delete" type="submit" name="delete" value="Borrar">
+        <input type="submit" name="delete" value="Participar">
     </form>
   </td>
-  %end
+%end
   </tr>
-    <form action="/new" method="GET">
-      <input class="botones_editar" type="submit" name="new" value="Incluir">
-    </form>
   </section>
 
 </body>

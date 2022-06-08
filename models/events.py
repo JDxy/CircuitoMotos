@@ -16,7 +16,7 @@ class Event:
         c.close()
         return data
     
-    def get_task(self, no):
+    def get_event(self, no):
         conn = self.__connect()
         c = conn.cursor()
         c.execute("SELECT * FROM eventos WHERE cod_evento LIKE ?", (str(no),))
@@ -24,8 +24,24 @@ class Event:
         conn.commit()
         c.close()
         return data
+
+    def insert_cliente(self, new1, new2, new3, new4, new5, new6):
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("INSERT INTO clientes(nombre,apellidos,dni,telefono,email,cod_evento) VALUES (?,?,?,?,?,?)", ((new1,new2,new3,new4,new5,new6)))
+        conn.commit()
+        c.close()
+        return True
+
+    def insert_cliente(self, new1, new2, new3, new4, new5, new6):
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("INSERT INTO clientes(nombre,apellidos,dni,telefono,email,cod_evento) VALUES (?,?,?,?,?,?)", ((new1,new2,new3,new4,new5,new6)))
+        conn.commit()
+        c.close()
+        return True
     
-    def insert_task(self, new1, new2, new3, new4, new5):
+    def insert_event(self, new1, new2, new3, new4, new5):
         conn = self.__connect()
         c = conn.cursor()
         c.execute("INSERT INTO eventos(fecha_inicio,fecha_fin,categoria,coste_participante,coste_espectadores) VALUES (?,?,?,?,?)", ((new1,new2,new3,new4,new5)))
