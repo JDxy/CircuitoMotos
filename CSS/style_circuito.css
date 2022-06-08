@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@media (max-width: 500px) {
+    .main_container {
+        display: grid;
+        grid-template-rows:70px 753px 1400px;
+        background-repeat: no-repeat;
+        background-size: 40em;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+}
+.main_container {
+    display: grid;
+
+    grid-template-rows:70px 753px 1750px;
+    background-repeat: no-repeat;
+    background-size: 40em;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+
+body {
+    font-family: sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 45px;
+    color: white;
+}
+
+.header{
+position: fixed;
+background-color: black;
+min-height: 72px;
+width: 100%;
+display: flex;
+flex-direction: row;
+align-items: stretch;
+justify-content: space-between;
+z-index: 2;
+}
+
+.First_IMG{
+    grid-row: 2;
+    width: 100%;
+    height: 800px;
+}
+
+/* STAR MENU zone */
+
+.img_menu{
+    z-index: 2;
+
+}
+ul{
+    display: none;
+}
+
+input:checked  ~ ul{
+    display:block;
+}
+
+input {
+    display: none;
+}
+
+
+label {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Estilo del boton cuando se pasa el mouse por encima*/
+label:hover{
+    background-color: white;
+}
+
+/* Estilo del boton cuando el menú está expandido*/
+input:checked ~ label {
+    background-color: white; 
+}
+
+ul{
+    margin-top:69px;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+}
+
+li {
+    display: block;
+    background-color: white;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid grey;
+    z-index: 4;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Estilo cuando el mouse pasa encima de cada link del menu*/
+li:hover {
+    filter: brightness(110%);
+    background-color: black;
+    color: white;
+}
+
+
+
+.section_1 {
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-row: 3;
+}
+
+.section_1 h1 {
+    padding: 5px;
+    font-size: 36px;
+    font-style: italic;
+}
+
+.section_1 img {
+    width: 100%;
+    height: 30em;
+}
+
+.section_1 div{
+    padding: 10px;    
+    border-bottom: 5px solid red;
+    border-top: 5px solid red;
+    font-size: 20px;
+}
