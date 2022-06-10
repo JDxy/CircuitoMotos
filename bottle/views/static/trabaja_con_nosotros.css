@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 320px){
+
+    .title_pc{
+        display: none;
+    }
+
+    .title_screen{
+        display: grid;
+        grid-template-columns: 0.1em 9.98em;
+        grid-template-rows:9.45rem 1rem 16rem 2.55rem;
+        overflow: hidden;
+        font-family: sans-serif;
+        background-image: url(../imagenes/fondo_equipo_movil.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:20em 27rem;
+        min-width: 20em;
+        min-height: 27rem;
+        height: 27rem;
+        z-index: 1;
+    }
+    .bg_color{
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.582);
+        width: 20em;
+        height: 27rem;
+    }
+
+    .title{
+      width: 9em;
+      height: 10rem;
+      color: white;
+      font-size: 34px;
+      text-align: center;
+      font-weight: bolder;
+      font-family: sans-serif;
+      grid-column: 2;
+      grid-row: 2;
+      z-index: 3;
+    }
+    
+    .continue{
+      display: grid;
+      grid-template-columns: 2.5em 15em 2.5em;
+      grid-template-rows: 2rem 25rem 2rem 6rem;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.781);
+      width: 20em;
+      height:35rem;
+      min-width: 20em;
+      min-height: 35rem;
+    }
+
+    div.formulario{
+      grid-column: 2 ;
+      grid-row: 2;
+      width: 15em;
+    }
+  
+    form{
+      z-index: 4;
+    }
+  
+  legend{
+    font-size: 19px;
+    color: white;
+    -webkit-text-stroke: 0.25px black;
+    text-shadow: -0.5px -0.5px 0.25px #000;
+    font-style: italic;
+  }
+  .adjuntar{
+    display: grid;
+    grid-template-columns: 1em 8em 1em;
+    grid-template-rows: 2rem 3rem 11rem 4rem;
+    padding: 20px;
+    width: 10,98em;
+    height: 20rem;
+    border-radius: 0px 0px 10px 10px;
+    border: 2px solid black;
+    color: white;
+  }
+
+  .adjuntar img{
+    padding: 1em;
+    padding-top: 1em;
+    width: 8em;
+    height: 7rem;
+    grid-column: 2;
+    grid-row: 2;
+    border: 3px black dotted;
+    border-width: 5px;
+  }
+  
+  .archivo{
+    width: 14em;
+    height: 15rem;
+    border: 1px solid black;
+    opacity: 0;
+  }
+  input.boton1{
+    font-size: 22px;
+    opacity: 100;
+    grid-column: 2;
+    grid-row: 4;
+    width: 5em;
+    height: 3rem;
+    margin-left: 1.25em;
+    border-radius: 10px;
+  }
+}
+
+  @media (min-width: 321px){
+ 
+    .title{
+      width: 9em;
+      height: 10rem;
+      color: white;
+      font-size: 27px;
+      text-align: center;
+      font-weight: bolder;
+      font-family: sans-serif;
+      grid-column: 2;
+      grid-row: 2;
+      z-index: 3;
+    }
+
+    .title_pc{
+        display: none;
+    }
+
+    .main_container{
+        display: grid;
+        grid-template-columns: 2.75em 9.98em;
+        grid-template-rows:8.45rem 4rem 16rem 2.55rem;
+        overflow: hidden;
+        font-family: sans-serif;
+        background-image: url(/views/static/imagenes/fondo_equipo_movil.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:26em 32rem;
+        min-width: 26em;
+        min-height: 32rem;
+        height: 27rem;
+        z-index: 1;
+    }
+    .bg_color{
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.623);
+        width: 27em;
+        height: 32rem;
+        min-width: 26em;
+        min-height: 32rem;
+    }
+
+    
+    .continue{
+      display: grid;
+      grid-template-columns: 3.5em 6em 3.5em;
+      grid-template-rows: 2rem 7rem 12rem 2rem 1rem;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.781);
+      width: 20em;
+      height:40rem;
+      background-size: 20.45em 24rem;
+      min-width: 20em;
+      min-height: 40rem;
+    }
+
+    div.formulario{
+      grid-column: 2  ;
+      grid-row: 2;
+      width: 10.98em;
+      height: 20rem;
+    }
+  
+    form{
+      z-index: 4;
+    }
+  
+  legend{
+    font-size: 19px;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: -1px -1px 0.5px #000;
+    font-style: italic;
+  }
+  .adjuntar{
+    display: grid;
+    grid-template-columns: 1em 8.98em 1em;
+    grid-template-rows: 2rem 3rem 11rem 4rem;
+    padding: 20px;
+    width: 10,98em;
+    height: 20rem;
+    border-radius: 0px 0px 10px 10px;
+    border: 2px solid black;
+    color: white;
+  }
+
+  .adjuntar img{
+    width: 4em;
+    height: 6rem;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+
+  }
+  
+  @media (min-width:427px) {
+    .bg_color{
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.623);
+        width: 12.75em;
+        height: 20rem;
+    }
+      .title{
+        width: 90em;
+        height: 20rem;
+        color: white;
+        font-size: 50px;
+        font-weight: bolder;
+        font-family: sans-serif;
+        grid-column: 2;
+        grid-row: 2;
+        z-index: 3;
+      }
+
+      
+  
+      .main_container {
+          display: grid;
+          grid-template-columns: 5em 20em 5em;
+          grid-template-rows:24rem 16rem 40rem 20rem;
+          overflow: hidden;
+          font-family: sans-serif;
+          background-image: url(../imagenes/fondo_equipo_movil.jpg);
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size:39.9em 40rem;
+          min-width: 30em;
+          min-height: 50rem;
+          z-index: 1;
+      }
+
+  }
+  @media (min-width: 1024px){
+      
+  
+    .main_container {
+        display: grid;
+        grid-template-columns: 16em 75em 12.5em;
+        grid-template-rows:24rem 16rem 40rem 20rem;
+        overflow: hidden;
+        font-family: sans-serif;
+        background-image: url(../imagenes/fondo_equipo.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:65em 45rem;
+        min-width: 250em;
+        min-height: 250rem;
+        z-index: 1;
+    }
+    .title{
+        display: none;
+      }
+    .title_pc{
+        width: 90em;
+        height: 50rem;
+        color: white;
+        font-size: 18px;
+        text-align:center;
+        font-weight: bolder;
+        font-family: sans-serif;
+        grid-column: 1;
+        grid-row: 2;
+        z-index: 3;
+      }
+  }
