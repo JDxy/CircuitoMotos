@@ -3,9 +3,8 @@ from random import choices
 import sys
 sys.path.append('models') # add the models directory to the path
 sys.path.append('forms')
-
 from email_validator import EmailNotValidError
-from wtforms import Form, BooleanField, StringField, PasswordField, SubmitField , RadioField, TextAreaField, SelectField, validators
+from WTForms import Form, BooleanField, StringField, PasswordField, SubmitField , RadioField, TextAreaField, SelectField, validators
 from config.config import DATABASE
 #todo = Todo(DATABASE)
 

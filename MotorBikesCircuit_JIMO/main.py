@@ -4,7 +4,9 @@ from bottle import route, run, request, template, get, post, redirect, static_fi
 from config.config import DATABASE
 from forms.register import RegistrationForm
 from forms.inicio import InicioForm
-from models.clientes import Equipos
+
+
+from MotorBikesCircuit_JIMO.models.equipos import Equipos
 
 clientes = Equipos(DATABASE)
 
@@ -48,27 +50,27 @@ def inicio():
     form = InicioForm(request.POST)
     return (template('inicio', form=form))
 
-@post('/inicio')
-def inicio():
-    if request.POST.Iniciar_sesion:
-        email = request.POST.email.strip()
-        contrasena = request.POST.contrasena.strip()
-        valido = clientes.validar_email(email)
-        if valido == "true":
-            contrasena_confirmada = clientes.validar_contrasena(email,contrasena)
-            if contrasena_confirmada == "true":
-                espectador_piloto = clientes.espectador_o_piloto(email)
-                if espectador_piloto == "piloto":
-                    return redirect(/pagina_piloto)
-                else:
-                    return redirect(/pagina_espectadores)
-            else:
+# @post('/inicio')
+# def inicio():
+#     if request.POST.Iniciar_sesion:
+#         email = request.POST.email.strip()
+#         contrasena = request.POST.contrasena.strip()
+#         valido = clientes.validar_email(email)
+#         if valido == "true":
+#             contrasena_confirmada = clientes.validar_contrasena(email,contrasena)
+#             if contrasena_confirmada == "true":
+#                 espectador_piloto = clientes.espectador_o_piloto(email)
+#                 if espectador_piloto == "piloto":
+#                     return redirect(/pagina_piloto)
+#                 else:
+#                     return redirect(/pagina_espectadores)
+#             else:
                 
 
 
-@get("/static/<filepath:path>")
-def html(filepath):
-    return static_file(filepath, root = "static")
+# @get("/static/<filepath:path>")
+# def html(filepath):
+#     return static_file(filepath, root = "static")
 
 if __name__ == '__main__':
     run(host='localhost', port=8080, debug=True, reloader=True)

@@ -77,24 +77,20 @@
               <legend>¡REGÍSTRATE!</legend>
                   <ul>
                       <li>
-                          <label for="nombre">Nombre:</label>
-                          <input class="input_texto" type="text" id="nombre" name="nombre">
+                          <label for="nombre_equipo">Nombre del equipo:</label>
+                          <input class="input_texto" type="text" id="nombre_equipo" name="nombre_equipo">
                       </li>
                       <li>
-                          <label for="apellidos">Apellidos:</label>
-                          <input class="input_texto" type="text" id="apellidos" name="apellidos">
+                          <label for="nombre_miembro">Nombre del integrante:</label>
+                          <input class="input_texto" type="text" id="nombre_miembro" name="nombre_miembro">
                       </li>
                       <li>
-                          <label for="contraseña">Contraseña:</label>
-                          <input class="input_texto" type="password" id="contrasena" name="contrasena">
+                          <label for="apellidos_miembro">Apellidos del integrante:</label>
+                          <input class="input_texto" type="text" id="apellidos_miembro" name="apellidos_miembro">
                       </li>
                       <li>
-                      <label for="conf_contraseña">Repetir contraseña:</label>
-                      <input class="input_texto" type="password" id="conf_contrasena" name="conf_contraseña_cliente">
-                      </li>
-                      <li>
-                      <label for="email">Email:</label>
-                      <input class="input_texto" type="email" id="email" name="email">
+                      <label for="ocupacion">Ocupación del integrante:</label>
+                      <input class="input_texto" type="text" id="ocupacion" name="ocupacion">
                       </li>
                       <li>
                           <label class="input_piloto" for="mail">¿Cómo quiere registrarse?:</label>
