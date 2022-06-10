@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.galeria {
+    padding: 16px;
+}
+
+.imagen-principal img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.lista-imagenes img{
+    width: 100%;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    display: block;
+}
+
+.lista-imagenes {
+    display: flex;
+    overflow-y: auto;
+    margin-top: 10px;
+}
+
+.galeria2 {
+    display: flex;
+    overflow-y: auto;
+    padding: 16px;
+    width: 200px;
+}
+
+.card {
+    margin-right: 10px;
+    position: relative;
+}
+
+.cuerpo-card {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background-color: black;
+    color: aliceblue;
+}
+
+.cuerpo-card h5, .cuerpo-card p {
+    margin: 0;
+}
+
+.card img {
+    width: 200px;
+    object-fit: cover;
+    height: 200px;
+}
