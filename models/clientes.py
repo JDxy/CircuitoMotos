@@ -75,3 +75,69 @@ class Clientes:
             return "false"
         else:
             return "true"
+
+    def tipo_miembro(self,email):
+        sd = "select miembro from espectador where email = ?;"
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute(sd, (email,))
+        data = c.fetchone()
+        conn.commit()
+        c.close()
+        return data
+
+    def añadir_reserva(self,email,cod_evento):
+        cod_espectador = self.get_cod_cliente(email)
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("INSERT INTO espectadoresyeventos(cod_espectador,cod_evento) VALUES (?,?)", ((cod_espectador,cod_evento)))
+        conn.commit()
+        c.close()
+        return True
+
+    def añadir_participante(self,email,cod_evento):
+        cod_participante = self.get_cod_cliente(email)
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("INSERT INTO cliente_piloto_evento(cod_participante,cod_evento) VALUES (?,?)", ((cod_participante,cod_evento)))
+        conn.commit()
+        c.close()
+        return True
+
+    def get_precio_piloto(self,cod_evento_):
+        conn = self.__connect()
+        sd = "select coste_participante from eventos where cod_evento = ?;"
+        c = conn.cursor()
+        c.execute(sd, (cod_evento_,))
+        data = c.fetchall()
+        conn.commit()
+        c.close()
+        return data
+
+    def get_precio_espectador(self,cod_evento_):
+        conn = self.__connect()
+        sd = "select coste_espectadores from eventos where cod_evento = ?;"
+        c = conn.cursor()
+        c.execute(sd, (cod_evento_,))
+        data = c.fetchall()
+        conn.commit()
+        c.close()
+        return data
+
+    def cobrar_entrada(self,email,cod_evento):
+        precio = self.get_precio_espectador(cod_evento)
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("INSERT INTO clientes(pago) VALUES (?) WHERE email = ?", ((precio,email)))
+        conn.commit()
+        c.close()
+        return True
+
+    def cobrar_piloto(self,email,cod_evento):
+        precio = self.get_cod_cliente(cod_evento)
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("INSERT INTO clientes(pago) VALUES (?) WHERE email = ?", ((precio,email)))
+        conn.commit()
+        c.close()
+        return True

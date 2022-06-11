@@ -46,12 +46,12 @@
   %end
   <td>
     <form action="/edit/{{row[0]}}" method="GET">
-        <input type="submit" name="save" value="Espectar">
+        <input type="submit" name="reservar_confirmar" value="Espectar">
     </form>
   </td>
   <td>
     <form action="/delete/{{row[0]}}" method="GET">
-        <input type="submit" name="delete" value="Participar">
+        <input type="submit" name="participar_confirmar" value="Participar">
     </form>
   </td>
 %end

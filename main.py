@@ -91,7 +91,7 @@ def inicio():
             else:
                 return "eorror"
 
-        return redirect('/todo')
+        return "error"
 
 @get("/static/<filepath:path>")
 def html(filepath):
