@@ -128,7 +128,7 @@ class Clientes:
         precio = self.get_precio_espectador(cod_evento)
         conn = self.__connect()
         c = conn.cursor()
-        c.execute("INSERT INTO clientes(pago) VALUES (?) WHERE email = ?", ((precio,email)))
+        c.execute("UPDATE INTO clientes(pago) VALUES (?) WHERE email = ?", ((precio,email)))
         conn.commit()
         c.close()
         return True
@@ -137,7 +137,15 @@ class Clientes:
         precio = self.get_cod_cliente(cod_evento)
         conn = self.__connect()
         c = conn.cursor()
-        c.execute("INSERT INTO clientes(pago) VALUES (?) WHERE email = ?", ((precio,email)))
+        c.execute("UPDATE INTO clientes(pago) VALUES (?) WHERE email = ?", ((precio,email)))
+        conn.commit()
+        c.close()
+        return True
+
+    def cobrar_mensualidad(self,email):
+        conn = self.__connect()
+        c = conn.cursor()
+        c.execute("UPDATE INTO clientes(pago) VALUES (40) WHERE email = ?", ((email)))
         conn.commit()
         c.close()
         return True
