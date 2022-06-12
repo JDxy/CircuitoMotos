@@ -1,0 +1,547 @@
+@media (max-width:450px){
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main_container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-rows:10vh 90vh;
+        background-image: url(../IMG/publico.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .registrarse_texto{
+        margin-top: 100px;
+        color: white;
+        text-align: center;
+        font-style: italic;
+    }
+    
+    .color_fondo{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.631);
+    }
+    
+    body {
+        font-family: sans-serif;
+    }
+    
+    .title {
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 45px;
+        color: white;
+    }
+    
+    .header{
+    position: fixed;
+    background-color: black;
+    min-height: 72px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    z-index: 2;
+    }
+
+    /* STAR MENU zone */
+
+    .img_menu{
+        z-index: 2;
+    
+    }
+    
+    /* Estilo del boton cuando se pasa el mouse por encima*/
+    .header nav label:hover{
+        background-color: white;
+    }
+    
+    /* Estilo del boton cuando el menú está expandido*/
+    input:checked ~ .header nav label {
+        background-color: white; 
+    }
+    
+    .header nav ul li {
+        display: block;
+        background-color: white;
+        margin: 0;
+        list-style: none;
+        border-bottom: 1px solid grey;
+        z-index: 4;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    /*Estilo cuando el mouse pasa encima de cada link del menu*/
+    .header nav ul li:hover {
+        filter: brightness(110%);
+        background-color: black;
+        color: white;
+    }
+.header nav ul{
+    display: none;
+}
+
+input:checked  ~ .header nav ul{
+    display:block;
+}
+
+.header input {
+    display: none;
+}
+
+
+.header nav label {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    font-weight: bold;
+    user-select: none;
+}
+
+.header nav ul{
+    margin-top:69px;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+}
+
+.formulario_div{
+    background-color: rgb(43, 36, 36);
+}
+
+.div_interior_form{
+    padding: 20px;
+}
+
+fieldset{
+    text-align: center;
+}
+
+legend{
+    color: white;
+    font-size: 20px;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: -2px -2px 1px black;
+    font-style: italic;
+}
+
+
+.formulario_div form ul{
+    color: white;
+}
+
+.formulario_div form ul li{
+    margin-top: 1em;
+    display: block;
+}
+
+.espectadores{
+    display: none;
+}
+
+.pilotos{
+    display: none;
+}
+
+.pago{
+    display: none;
+}
+
+li:hover {
+    filter: brightness(110%);
+}
+
+  button{
+    BORDER: rgb(0, 0, 0) 1px solid; 
+    FONT-SIZE: 10pt; 
+    FONT-FAMILY: sans-serif; 
+    BACKGROUND-COLOR: rgb(255, 255, 255);
+    width: 60px;
+    height: 15px;
+  }
+}
+
+/*Final parte movil*/
+
+@media (min-width:600px){
+
+  * {
+    margin: 0;
+    padding: 0;
+}
+
+.main_container {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows:10vh 90vh;
+    background-image: url(../IMG/publico.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.registrarse_texto{
+    margin-top: 250px;
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    font-style: italic;
+}
+
+.color_fondo{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.631);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 59px;
+  color: white;
+}
+
+.header{
+position: fixed;
+background-color: black;
+min-height: 90px;
+width: 100%;
+flex-direction: row;
+align-items: stretch;
+justify-content: space-between;
+z-index: 2;
+}
+
+/* STAR MENU zone */
+
+.img_menu{
+z-index: 2;
+
+}
+.header nav ul{
+display: none;
+}
+
+input:checked  ~ .header nav ul{
+display:block;
+}
+
+.header input {
+display: none;
+}
+
+
+.header nav label {
+position: fixed;
+width: 70px;
+height: 70px;
+font-weight: bold;
+user-select: none;
+}
+
+/* Estilo del boton cuando se pasa el mouse por encima*/
+.header nav label:hover{
+    background-color: white;
+}
+
+/* Estilo del boton cuando el menú está expandido*/
+input:checked ~ .header nav label {
+    background-color: white; 
+}
+
+.header nav ul li {
+    display: block;
+    background-color: white;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid grey;
+    z-index: 4;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Estilo cuando el mouse pasa encima de cada link del menu*/
+.header nav ul li:hover {
+    filter: brightness(110%);
+    background-color: black;
+    color: white;
+}
+
+.header nav ul{
+margin-top:69px;
+padding: 0;
+width: 200px;
+position: fixed;
+}
+
+.formulario_div{
+background-color: rgb(43, 36, 36);
+}
+
+.div_interior_form{
+padding: 20px;
+font-size: 28px;
+}
+
+fieldset{
+text-align: center;
+}
+
+legend{
+color: white;
+font-size: 20px;
+-webkit-text-stroke: 0.5px black;
+text-shadow: -2px -2px 1px black;
+font-style: italic;
+}
+
+
+.formulario_div form ul{
+color: white;
+}
+
+.formulario_div form ul li{
+margin-top: 1em;
+display: block;
+}
+
+.espectadores{
+display: none;
+}
+
+.pilotos{
+display: none;
+}
+
+.pago{
+display: none;
+}
+
+.input_texto{
+    width: 20em;
+    height: 2em;
+}
+
+.mayor_edad{
+    display: none;
+}
+
+.boton{
+    transform: scale(2);
+    margin-bottom: 20px;
+    margin: 1em;
+}
+.boton_registrarse{
+    transform: scale(2);
+    margin-bottom: 50px;
+}
+
+li:hover {
+filter: brightness(110%);
+}
+
+
+button{
+BORDER: rgb(0, 0, 0) 1px solid; 
+FONT-SIZE: 10pt; 
+FONT-FAMILY: sans-serif; 
+BACKGROUND-COLOR: rgb(255, 255, 255);
+width: 60px;
+height: 15px;
+}
+}
+
+@media (max-width: 600px){
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main_container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-rows:10vh 90vh;
+        background-image: url(../IMG/publico.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    .registrarse_texto{
+        margin-top: 100px;
+        color: white;
+        text-align: center;
+        font-style: italic;
+    }
+    
+    .color_fondo{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.631);
+    }
+    
+    body {
+        font-family: sans-serif;
+    }
+    
+    .title {
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 45px;
+        color: white;
+    }
+    
+    .header{
+    position: fixed;
+    background-color: black;
+    min-height: 72px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    z-index: 2;
+    }
+
+    /* STAR MENU zone */
+
+.img_menu{
+    z-index: 2;
+
+}
+.header nav ul{
+    display: none;
+}
+
+input:checked  ~ .header nav ul{
+    display:block;
+}
+
+.header input {
+    display: none;
+}
+
+
+.header nav label {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    font-weight: bold;
+    user-select: none;
+}
+
+/* Estilo del boton cuando se pasa el mouse por encima*/
+.header nav label:hover{
+    background-color: white;
+}
+
+/* Estilo del boton cuando el menú está expandido*/
+input:checked ~ .header nav label {
+    background-color: white; 
+}
+
+.header nav ul li {
+    display: block;
+    background-color: white;
+    margin: 0;
+    list-style: none;
+    border-bottom: 1px solid grey;
+    z-index: 4;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Estilo cuando el mouse pasa encima de cada link del menu*/
+.header nav ul li:hover {
+    filter: brightness(110%);
+    background-color: black;
+    color: white;
+}
+
+.header nav ul{
+    margin-top:69px;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+}
+
+.formulario_div{
+    background-color: rgb(43, 36, 36);
+}
+
+.div_interior_form{
+    padding: 20px;
+}
+
+fieldset{
+    text-align: center;
+}
+
+legend{
+    color: white;
+    font-size: 20px;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: -2px -2px 1px black;
+    font-style: italic;
+}
+
+
+.formulario_div form ul{
+    color: white;
+}
+
+.formulario_div form ul li{
+    margin-top: 1em;
+    display: block;
+}
+
+.espectadores{
+    display: none;
+}
+
+.pilotos{
+    display: none;
+}
+
+.pago{
+    display: none;
+}
+
+li:hover {
+    filter: brightness(110%);
+}
+
+  button{
+    BORDER: rgb(0, 0, 0) 1px solid; 
+    FONT-SIZE: 10pt; 
+    FONT-FAMILY: sans-serif; 
+    BACKGROUND-COLOR: rgb(255, 255, 255);
+    width: 60px;
+    height: 15px;
+  }
+}
+.menu:checked  ~ ul{
+    display:block;
+}
+
+.menu {
+    display: none;
+}
