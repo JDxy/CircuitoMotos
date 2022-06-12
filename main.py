@@ -119,8 +119,6 @@ def new_event_form():
 def new_client_form():
     return template('new_client')
 
-
-
 @post('/new_event/client')
 def new_client_save():
     if request.POST.save:
@@ -131,7 +129,8 @@ def new_client_save():
         email = request.POST.Email.strip()
         cod_evento = request.POST.Cod_evento.strip()
         tipo_cliente = request.POST.Tipo_cliente.strip()
-        event.insert_cliente(nombre, apellidos, dni, telefono, email, cod_evento)
+        if tipo_cliente == 1:
+            event.insert_cliente(nombre, apellidos, dni, telefono, email, cod_evento)
         redirect('/events/user')
 
 @route('/events/user')
@@ -170,21 +169,6 @@ def new_reserva_moto():
             motos.añadir_reserva(valor_madre,cod_moto)
     return redirect('/inicio')
 
-
-
-@post('/new_event/client')
-def new_client_save():
-    if request.POST.save:
-        nombre = request.POST.Nombre.strip()
-        apellidos = request.POST.Apellidos.strip()
-        dni = request.POST.DNI.strip()
-        telefono = request.POST.Telefono.strip()
-        email = request.POST.Email.strip()
-        cod_evento = request.POST.Cod_evento.strip()
-        tipo_cliente = request.POST.Tipo_cliente.strip()
-        event.insert_cliente(nombre, apellidos, dni, telefono, email, cod_evento)
-        redirect('/events/user')
-
 @post('/new_event')
 def new_event_save():
     if request.POST.save:  # the user clicked the `save` button
@@ -206,7 +190,7 @@ def edit_item(no):
     if request.POST.reservar_confirmar:
         if valor_madre != "None":
             tipo_miembro = clientes.tipo_miembro(valor_madre)
-            if tipo_miembro == "miembro":
+            if tipo_miembro == 1:
                 clientes.añadir_reserva(valor_madre,no)
             else:
                 clientes.añadir_reserva(valor_madre,no)
@@ -227,7 +211,7 @@ def edit_item(no):
                 clientes.añadir_participante(valor_madre,no)
                 clientes.cobrar_piloto(valor_madre,no)
             else:
-                return ("/error")
+                return ("Usted no es piloto")
         return redirect('/inicio')
 
 @get('/edit/<no:int>')
